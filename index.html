@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(producto, index) in productos">{{ producto.nombre }} Cantidad: {{ producto.cantidad }}
+                <span v-on:click="aumentarCantidad(index)">+</span>
+                <span v-on:click="disminuirCantidad(index)">-</span>
+            </li>
+            <div>{{ total }}</div>
+        </ul>
+
+        <input type="text" v-model="nuevoId">
+        <input type="text" v-model="nuevoNombre">
+        <button v-on:click="addNombre">Añade nombre</button>
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
